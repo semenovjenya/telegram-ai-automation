@@ -4,5 +4,5 @@ pytest-cov==7.0.0
 httpx2==2.6.0
 ruff==0.15.21
 # Parser ML regression tests exercise dataframe feature selection.
-numpy>=1.24.0
+numpy>=2.4.6
 pandas>=2.0.0
