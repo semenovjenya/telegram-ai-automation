@@ -1,0 +1,31 @@
+[project]
+name = "telegram-ai-analytics-platform"
+version = "0.3.0"
+description = "Multi-tenant Telegram analytics and AI orchestration platform"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+
+[tool.pytest.ini_options]
+addopts = "--strict-config --strict-markers"
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "S"]
+ignore = [
+  "E501", # formatter deliberately leaves long strings, prompts, and URLs intact
+  "S101", # assert is expected in tests and defensive runtime guards
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S105", "S106"]
+".github/scripts/**" = ["S310", "S603", "S607"] # fixed local commands and HTTP-only smoke URLs
+"ai_brain/clients/postgres_client.py" = ["S608"] # interpolated identifiers are module constants, values stay parameterized
+"ai_brain/config/settings.py" = ["S104", "S108"] # container bind address and local artifact default
+"ai_brain/tools/repost_tool.py" = ["S108"] # development-only fallback; production requires configured persistent storage
+"auth-backend/main.py" = ["S104"] # explicit container entrypoint
+"compose/telegram-mock/server.py" = ["S104"] # explicit container entrypoint

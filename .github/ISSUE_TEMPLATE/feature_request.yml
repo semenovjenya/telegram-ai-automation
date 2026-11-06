@@ -1,0 +1,43 @@
+name: Feature request
+description: Предложить изменение продукта или архитектуры
+title: "[Feature]: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Проблема
+      description: Какую пользовательскую или инженерную проблему нужно решить?
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Желаемый результат
+      description: Опишите observable behavior и критерии готовности.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Предлагаемое решение
+      description: API/UI/data flow, если уже есть идея.
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: Security и data boundaries
+      description: Tenant data, credentials, external APIs, side effects, migrations.
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Альтернативы и компромиссы
+  - type: checkboxes
+    id: invariants
+    attributes:
+      label: Инварианты проекта
+      options:
+        - label: Zero-credential demo останется воспроизводимым или изменение явно обновит этот контракт.
+          required: true
+        - label: Tenant isolation и explicit confirmation не ослабляются.
+          required: true
+        - label: Я проверил существующие issues/PR.
+          required: true

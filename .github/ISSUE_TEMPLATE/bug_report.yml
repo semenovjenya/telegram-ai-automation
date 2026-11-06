@@ -1,0 +1,73 @@
+name: Bug report
+description: Сообщить о воспроизводимой ошибке в public core
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо за отчёт. Не публикуйте здесь секреты или уязвимости — используйте SECURITY.md.
+  - type: dropdown
+    id: component
+    attributes:
+      label: Компонент
+      options:
+        - AI-BRAIN / LangGraph
+        - Auth / API gateway
+        - Frontend / BFF
+        - Compose / containers
+        - Telegram mock / adapter contract
+        - Parser / analytics
+        - Monitoring
+        - CI / repository quality
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Commit или версия
+      description: Например, git rev-parse --short HEAD
+      placeholder: abc1234
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Окружение
+      description: ОС, Docker/Compose, Python/Node и используемый runtime mode
+      placeholder: macOS 15, Docker Desktop, LLM_PROVIDER=mock
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Шаги воспроизведения
+      placeholder: |
+        1. Запустить ...
+        2. Вызвать ...
+        3. Наблюдать ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Ожидаемое поведение
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Фактическое поведение и безопасные логи
+      description: Удалите токены, cookies, Telegram identifiers и персональные данные.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Проверки
+      options:
+        - label: Я проверил существующие issues/PR.
+          required: true
+        - label: Отчёт не содержит secrets или персональные данные.
+          required: true
+        - label: Это не приватный security report.
+          required: true

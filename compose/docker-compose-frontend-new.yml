@@ -1,0 +1,27 @@
+name: telegram-analytics-frontend
+
+services:
+  frontend-new:
+    build:
+      context: ../frontend-new
+      dockerfile: Dockerfile
+    image: telegram-ai-analytics/frontend:local
+    ports:
+      - "${BIND_ADDRESS:-127.0.0.1}:${FRONTEND_PORT:-7777}:7777"
+    environment:
+      NODE_ENV: production
+      ENVIRONMENT: ${ENVIRONMENT:-development}
+      PORT: "7777"
+      HOSTNAME: 0.0.0.0
+      AUTH_BACKEND_URL: ${AUTH_BACKEND_URL:-http://host.docker.internal:8001/api}
+      PUBLIC_APP_ORIGIN: ${PUBLIC_APP_ORIGIN:-http://localhost:7777}
+      LOGIN_CLIENT_SIGNING_KEY: ${LOGIN_CLIENT_SIGNING_KEY:-local-login-client-signing-key-change-me}
+      DASHBOARD_DATA_SOURCE: ${DASHBOARD_DATA_SOURCE:-synthetic-demo}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:7777"]
+      interval: 10s
+      timeout: 5s
+      start_period: 20s
+      retries: 10

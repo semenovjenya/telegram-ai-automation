@@ -1,0 +1,26 @@
+{
+  "data_source": "synthetic-demo",
+  "posts": [
+    {
+      "post_id": 101,
+      "text_preview": "Synthetic creator-economy case study",
+      "views": 9450,
+      "engagement_rate": 21.4,
+      "age_days": 1.2
+    },
+    {
+      "post_id": 102,
+      "text_preview": "Synthetic audience research checklist",
+      "views": 8120,
+      "engagement_rate": 19.8,
+      "age_days": 3.4
+    },
+    {
+      "post_id": 103,
+      "text_preview": "Synthetic barter campaign retrospective",
+      "views": 7340,
+      "engagement_rate": 17.6,
+      "age_days": 6.1
+    }
+  ]
+}

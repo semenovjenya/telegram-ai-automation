@@ -1,0 +1,106 @@
+# Environment and session secrets
+*.env
+*.env.*
+.env
+.env.*
+
+# Keep sanitized environment examples in Git
+!.env.example
+!**/.env.example
+
+*.session
+*.session-journal
+compose/env/parser?.env
+compose/env/*.session
+chatbot/*.session
+parser_local/*.session
+
+# SSH setup files (temporary)
+setup_server_via_ssh.py
+ssh_exec.py
+ssh_helper.py
+test_ssh_connection.py
+sftp_upload.py
+full_server_setup.py
+
+# SSH documentation (temporary)
+README_SSH_AI.md
+QUICK_START_SSH.md
+SSH_ASSISTANT_GUIDE.md
+*_НАСТРОЙКИ_SSH.md
+*_РАБОТАТЬ_С_СЕРВЕРОМ.md
+*_ДОБАВИТЬ_SSH_КЛЮЧ_В_GITHUB.md
+
+# Setup documentation (temporary)
+ОТЧЕТ_УСТАНОВКИ.md
+ПАМЯТКА_УСТАНОВКА.txt
+СПИСОК_SECRETS_ДЛЯ_GITHUB.md
+СХЕМА_АВТОДЕПЛОЯ.txt
+ЧТО_НУЖНО_УСТАНОВИТЬ.md
+ШПАРГАЛКА_GITHUB_SECRETS.txt
+
+# Removal documentation (temporary)
+*_REMOVAL.md
+
+# Generated data files and logs
+data/raw/*.tsv
+Logs/processed/*.txt
+channels.txt
+*.log
+logs/
+*/logs/
+**/logs/
+chatbot/logs/
+parser_local/Logs/
+
+# Python cache
+.venv/
+.venv-*/
+venv/
+env/
+__pycache__/
+*/__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.pytest_cache/
+.ruff_cache/
+*.pkl
+*.joblib
+
+# Offline parser outputs
+parser_local/ML/data/*
+!parser_local/ML/data/.gitkeep
+parser_local/ML/models/*
+!parser_local/ML/models/.gitkeep
+parser_local/ML/results/*
+!parser_local/ML/results/.gitkeep
+
+# JavaScript build output and dependencies
+node_modules/
+.next/
+out/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Legacy Cyrillic folders (renamed to Latin)
+Чат бот/
+авторизация/
+акк1/

@@ -1,0 +1,48 @@
+logging {
+  level  = "info"
+  format = "logfmt"
+}
+
+discovery.docker "platform" {
+  host             = "http://docker-socket-proxy:2375"
+  refresh_interval = "60s"
+
+  filter {
+    name   = "label"
+    values = ["logging_enabled=true"]
+  }
+}
+
+discovery.relabel "platform_logs" {
+  targets = []
+
+  rule {
+    source_labels = ["__meta_docker_container_name"]
+    regex         = "/(.*)"
+    target_label  = "container"
+  }
+
+  rule {
+    source_labels = ["__meta_docker_container_label_logging_app"]
+    target_label  = "app"
+  }
+
+  rule {
+    target_label = "job"
+    replacement  = "telegram-ai-analytics-platform"
+  }
+}
+
+loki.source.docker "platform" {
+  host             = "http://docker-socket-proxy:2375"
+  targets          = discovery.docker.platform.targets
+  relabel_rules    = discovery.relabel.platform_logs.rules
+  refresh_interval = "60s"
+  forward_to       = [loki.write.local.receiver]
+}
+
+loki.write "local" {
+  endpoint {
+    url = "http://loki:3100/loki/api/v1/push"
+  }
+}

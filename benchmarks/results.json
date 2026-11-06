@@ -1,0 +1,27 @@
+{
+  "measurement": "UTF-8 bytes of canonical role/content JSON",
+  "baseline": "All messages of the loaded window, current user message once",
+  "scope": "Synthetic inputs; older history is omitted, not losslessly compressed; no quality or billing claim",
+  "cases": [
+    {
+      "loaded_history_messages": 10,
+      "baseline_messages": 12,
+      "bounded_messages": 12,
+      "baseline_bytes": 2915,
+      "bounded_bytes": 2915,
+      "reduction_percent": 0.0,
+      "older_messages_omitted": 0,
+      "current_message_copies": 1
+    },
+    {
+      "loaded_history_messages": 50,
+      "baseline_messages": 52,
+      "bounded_messages": 32,
+      "baseline_bytes": 14055,
+      "bounded_bytes": 8485,
+      "reduction_percent": 39.63,
+      "older_messages_omitted": 20,
+      "current_message_copies": 1
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+version: 2
+
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: npm
+    directory: /frontend-new
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: pip
+    directory: /ai_brain
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: pip
+    directory: /auth-backend
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: pip
+    directory: /parser_local
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: pip
+    directory: /parser_local/ML
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: docker
+    directory: /ai_brain
+    schedule:
+      interval: weekly
+
+  - package-ecosystem: docker
+    directory: /auth-backend
+    schedule:
+      interval: weekly
+
+  - package-ecosystem: docker
+    directory: /frontend-new
+    schedule:
+      interval: weekly
+
+  - package-ecosystem: docker
+    directory: /compose/telegram-mock
+    schedule:
+      interval: weekly
+
+  - package-ecosystem: docker-compose
+    directory: /compose
+    schedule:
+      interval: weekly
