@@ -42,18 +42,6 @@ flowchart LR
 
 Полная схема, последовательности запросов и модель хранения описаны в [docs/ARCHITECTURE.md](ARCHITECTURE.md).
 
-## Интерфейс
-
-Dashboard сразу маркирует synthetic data и не выдаёт демонстрационные метрики за live-аналитику.
-
-![Dashboard с явно обозначенными синтетическими данными](assets/dashboard-demo.png)
-
-AI-ассистент доступен и на мобильном экране: запрос проходит backend-маршрутизацию, а ответ и история сохраняются через BFF без JWT в browser JavaScript.
-
-<p align="center">
-  <img src="assets/ai-assistant-mobile.png" alt="Мобильный AI-ассистент в синтетическом demo-режиме" width="390">
-</p>
-
 ## Быстрый старт без credentials
 
 Потребуются Docker Engine/Desktop и Docker Compose v2.

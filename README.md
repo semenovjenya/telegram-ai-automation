@@ -45,12 +45,6 @@ Workflow: `load_memory → save_user_message → router → selected_agent → s
 
 SQL и история не исполняются внутри frontend. Service credentials добавляет gateway, клиентский tenant ID не считается доверенным. Долговременная история и checkpoints — отдельные механизмы.
 
-## Интерфейс
-
-![Dashboard: синтетические данные](docs/assets/dashboard-demo.png)
-
-Dashboard маркирует demo-данные. AI-ассистент сохраняет диалог через BFF; токен не передаётся в browser JavaScript.
-
 ## Быстрый локальный пример
 
 Требуется Python 3.11. Пример запускает настоящий граф, детерминированные mock-агенты и явно подменённое in-memory хранилище. Он не проверяет PostgreSQL или browser auth.

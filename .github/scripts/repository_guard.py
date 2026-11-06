@@ -30,8 +30,6 @@ REQUIRED_PATHS = (
     "compose/docker-compose.yml",
     "compose/telegram-mock/Dockerfile",
     "compose/telegram-mock/server.py",
-    "docs/assets/ai-assistant-mobile.png",
-    "docs/assets/dashboard-demo.png",
     "frontend-new/Dockerfile",
     "frontend-new/lib/server/request-body.ts",
     "frontend-new/package-lock.json",
