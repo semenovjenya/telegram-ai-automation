@@ -1,5 +1,5 @@
 # Direct dependencies for the optional ML pipeline (Python 3.11).
-lightgbm==4.6.0
+lightgbm==4.7.0
 numpy==2.4.6
 pandas==3.0.3
 python-dateutil==2.9.0.post0
