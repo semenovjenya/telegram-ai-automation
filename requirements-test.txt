@@ -2,7 +2,7 @@ pytest==9.0.3
 pytest-cov==7.0.0
 # Starlette 1.3 TestClient transport (test-only; application clients use httpx).
 httpx2==2.6.0
-ruff==0.15.21
+ruff==0.17.3
 # Parser ML regression tests exercise dataframe feature selection.
 numpy>=1.24.0
 pandas>=2.0.0
