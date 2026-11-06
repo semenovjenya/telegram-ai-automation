@@ -1,5 +1,5 @@
 # Direct dependencies for the offline Telegram parser (Python 3.11).
 openai==2.45.0
 PySocks==1.7.1
-python-dotenv==1.2.2
+python-dotenv==1.2.4
 Telethon==1.44.0
